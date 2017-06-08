@@ -37,7 +37,7 @@
     } else {
       $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["SCRIPT_NAME"];
     }
-    $pageURL = 'https://aaron-dev.myshopify.com';
+
     // redirect to authorize url
     header("Location: " . $shopifyClient->getAuthorizeUrl(SHOPIFY_SCOPE, $pageURL));
     exit;
