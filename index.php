@@ -6,8 +6,8 @@
   
   $sc = new ShopifyClient($_SESSION['shop'], $_SESSION['token'], $api_key, $secret);
 
-  // if(!$sc->validateSignature($_GET))
-  //   die('Error: invalid signature.');
+  if(!$sc->validateSignature($_GET))
+    die('Error: invalid signature.');
   
   try
   {
