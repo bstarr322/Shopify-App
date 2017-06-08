@@ -1,0 +1,11 @@
+{
+    "name": "aaron/shopify-app",
+    "description": "Shopify App\u001b[H",
+    "authors": [
+        {
+            "name": "bstarr322",
+            "email": "jointstarsoft@gmail.com"
+        }
+    ],
+    "require": {}
+}
