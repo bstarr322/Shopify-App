@@ -3,7 +3,7 @@
   require 'shopify.php';
 
   session_start();
-  
+
   $sc = new ShopifyClient($_SESSION['shop'], $_SESSION['token'], $api_key, $secret);
 
   // if(!$sc->validateSignature($_GET))
@@ -14,7 +14,24 @@
     // Get all products
     $products = $sc->call('GET', '/admin/products.json', array('published_status'=>'published'));
 
-    var_dump($products);
+    // Post New Product.
+    $new_product = array
+    (
+      "product" => array
+      (
+        "title"     => "Burton Custom Freestyle 151",
+        "body_html" => "<strong>Good snowboard!<\/strong>",
+        "vendor"    => "Burton",
+        "product_type"  => "Snowboard",
+        "tags"      => "Barnes & Noble, John's Fav, \"Big Air\""
+      )
+    );
+
+    try {
+      $response = $sc->call('POST', '/admin/products.json', $new_product);
+    } catch (ShopifyApiException $e) {
+      
+    }
 
     // Create a new recurring charge
     $charge = array
