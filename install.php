@@ -14,13 +14,17 @@
     $shopifyClient = new ShopifyClient($_GET['shop'], "", SHOPIFY_API_KEY, SHOPIFY_SECRET);
     session_unset();
     
+    if ( ! session_id() ) @ session_start();
+    
     // Now, request the token and store it in your session.
     $_SESSION['token'] = $shopifyClient->getAccessToken($_GET['code']);
+
     if ($_SESSION['token'] != '')
       $_SESSION['shop'] = $_GET['shop'];
   
     header("Location: index.php");
     exit;   
+
   } else if (isset($_POST['shop'])) { // if they posted the form with the shop name
   
     // Step 1: get the shopname from the user and redirect the user to the
