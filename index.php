@@ -2,6 +2,8 @@
 
   require 'shopify.php';
 
+  session_start();
+  
   $sc = new ShopifyClient($_SESSION['shop'], $_SESSION['token'], $api_key, $secret);
 
   var_dump($_SESSION);
