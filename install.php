@@ -16,7 +16,7 @@
     
     // Now, request the token and store it in your session.
     $_SESSION['token'] = $shopifyClient->getAccessToken($_GET['code']);
-    var $_SESSION['token']; exit;
+    var_dump($_SESSION['token']); exit;
     if ($_SESSION['token'] != '')
       $_SESSION['shop'] = $_GET['shop'];
   
