@@ -31,9 +31,8 @@
     );
 
     try {
-      $response = $sc->call('POST', '/admin/products.json', $new_product);
-      print_r($response);
-      
+      $pr_response = $sc->call('POST', '/admin/products.json', $new_product);
+
     } catch (ShopifyApiException $e) {
       
     }
@@ -82,3 +81,69 @@
     // $e->getMessage() returns value of curl_errno() and $e->getCode() returns value of curl_ error()
   }
 
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AarSoft</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+  <meta content="Let's build with me !" name="description">
+
+  <link rel="icon" type="image/png" href="https://tnckb94959.i.lithium.com/html/assets/favicon.png" sizes="32x32">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style type="text/css">
+    section.main {
+      height: calc(100vh - 325px);
+      display: flex;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Aaron Soft
+        </h1>
+        <h2 class="subtitle">
+          Install this app in a shop to get access to its private admin data.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <section class="section main">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <div class="field">
+            <label for='shop' class="label">Product Response</label>
+          </div>
+          <figure>
+            <pre>
+              <code>
+                <?php print_r($pr_response); ?>
+              </code>
+            </pre>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>Don&rsquo;t have a shop to install your app in handy?<a href="https://app.shopify.com/services/partners/api_clients/test_shops">Create a test shop.</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
