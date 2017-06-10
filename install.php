@@ -22,7 +22,7 @@
     if ($_SESSION['token'] != '')
       $_SESSION['shop'] = $_GET['shop'];
   
-    header("Location: index.php");
+    header("Location: /");
     exit;   
 
   } else if (isset($_POST['shop'])) { // if they posted the form with the shop name
