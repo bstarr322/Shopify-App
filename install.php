@@ -76,7 +76,7 @@
     <div class="hero-body">
       <div class="container">
         <h1 class="title">
-          Aaron Soft
+          A.M. Soft
         </h1>
         <h2 class="subtitle">
           Install this app in a shop to get access to its private admin data.

@@ -16,26 +16,6 @@
     // Get all products
     $products = $sc->call('GET', '/admin/products.json', array('published_status'=>'published'));
 
-    // // Post New Product.
-    // $new_product = array
-    // (
-    //   "product" => array
-    //   (
-    //     "title"     => "Burton Custom Freestyle 151",
-    //     "body_html" => "<strong>Good snowboard!<\/strong>",
-    //     "vendor"    => "Burton",
-    //     "product_type"  => "Snowboard",
-    //     "tags"      => "Barnes & Noble, John's Fav, \"Big Air\""
-    //   )
-    // );
-
-    // try {
-    //   $pr_response = $sc->call('POST', '/admin/products.json', $new_product);
-
-    // } catch (ShopifyApiException $e) {
-      
-    // }
-
     // Create a new recurring charge
     $charge = array
     (
@@ -112,10 +92,10 @@
     <div class="hero-body">
       <div class="container">
         <h1 class="title">
-          Aaron Soft
+          A.M. Soft
         </h1>
         <h2 class="subtitle">
-          Install this app in a shop to get access to its private admin data.
+          Create Product
         </h2>
       </div>
     </div>
