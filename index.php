@@ -17,25 +17,25 @@
     // Get all products
     $products = $sc->call('GET', '/admin/products.json', array('published_status'=>'published'));
 
-    // Post New Product.
-    $new_product = array
-    (
-      "product" => array
-      (
-        "title"     => "Burton Custom Freestyle 151",
-        "body_html" => "<strong>Good snowboard!<\/strong>",
-        "vendor"    => "Burton",
-        "product_type"  => "Snowboard",
-        "tags"      => "Barnes & Noble, John's Fav, \"Big Air\""
-      )
-    );
+    // // Post New Product.
+    // $new_product = array
+    // (
+    //   "product" => array
+    //   (
+    //     "title"     => "Burton Custom Freestyle 151",
+    //     "body_html" => "<strong>Good snowboard!<\/strong>",
+    //     "vendor"    => "Burton",
+    //     "product_type"  => "Snowboard",
+    //     "tags"      => "Barnes & Noble, John's Fav, \"Big Air\""
+    //   )
+    // );
 
-    try {
-      $pr_response = $sc->call('POST', '/admin/products.json', $new_product);
+    // try {
+    //   $pr_response = $sc->call('POST', '/admin/products.json', $new_product);
 
-    } catch (ShopifyApiException $e) {
+    // } catch (ShopifyApiException $e) {
       
-    }
+    // }
 
     // Create a new recurring charge
     $charge = array
@@ -96,6 +96,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <script
+  src="https://code.jquery.com/jquery-1.11.1.js"
+  integrity="sha256-MCmDSoIMecFUw3f1LicZ/D/yonYAoHrgiep/3pCH9rw="
+  crossorigin="anonymous"></script>
+
   <style type="text/css">
     section.main {
       min-height: calc(100vh - 325px);
@@ -122,31 +127,41 @@
     <div class="container">
       <div class="columns">
         <div class="column is-8 is-offset-2">
-          <div class="field">
-            <label class="label">Create a new product with the default product variant</label>
-            <pre>
-
-              <b>POST /admin/products.json</b>
-
-              {
-                "product": {
-                  "title": "Burton Custom Freestyle 151",
-                  "body_html": "<strong>Good snowboard!<\/strong>",
-                  "vendor": "Burton",
-                  "product_type": "Snowboard",
-                  "tags": "Barnes & Noble, John's Fav, \"Big Air\""
-                }
-              }
-
-              </pre>
-          </div>
+          <form method="POST" id="form_pr">
+            <label class="label">Product Details</label>
+            <div class="field">
+              <label class="label">Product Name</label>
+              <p class="control">
+                <input name="title" class="input" type="text" placeholder="Text input">
+              </p>
+            </div>
+            <div class="field">
+              <label class="label">Product Description</label>
+              <p class="control">
+                <input name="body_html" class="input" type="text" placeholder="Text input">
+              </p>
+            </div>
+            <div class="field">
+              <label class="label">Vendor</label>
+              <p class="control">
+                <input name="vendor" class="input" type="text" placeholder="Text input">
+              </p>
+            </div>
+            <div class="field">
+              <label class="label">Product Type</label>
+              <p class="control">
+                <input name="product_type" class="input" type="text" placeholder="Text input">
+              </p>
+            </div>
+            <a class="button create-product">Primary</a>
+          </form>
+          
           <div class="field">
             <label for='shop' class="label">Product Response</label>
           </div>
-          <figure>
+          <figure class="response">
             <pre>
               <code>
-                <?php print_r($pr_response); ?>
               </code>
             </pre>
           </figure>
@@ -163,5 +178,25 @@
       </div>
     </div>
   </footer>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.create-product').on('click', function() {
+        $.ajax({
+          url: '/api.php/createProduct'
+          method: 'POST',
+          dataType: "json",
+          data: JSON.stringify($("#form_pr").serialize()),
+          success: function(data) {
+            console.log('Succssfully Created!');
+            $('.response code').html(data);
+          },
+          error: function() {
+
+          }
+        })
+      });
+    });
+  </script>
 </body>
 </html>
