@@ -98,7 +98,7 @@
 
   <style type="text/css">
     section.main {
-      height: calc(100vh - 325px);
+      min-height: calc(100vh - 325px);
       display: flex;
       align-items: center;
     }
@@ -122,6 +122,24 @@
     <div class="container">
       <div class="columns">
         <div class="column is-8 is-offset-2">
+          <div class="field">
+            <label class="label">Create a new product with the default product variant</label>
+            <pre>
+            
+              <b>POST /admin/products.json</b>
+
+              {
+                "product": {
+                  "title": "Burton Custom Freestyle 151",
+                  "body_html": "<strong>Good snowboard!<\/strong>",
+                  "vendor": "Burton",
+                  "product_type": "Snowboard",
+                  "tags": "Barnes & Noble, John's Fav, \"Big Air\""
+                }
+              }
+
+              </pre>
+          </div>
           <div class="field">
             <label for='shop' class="label">Product Response</label>
           </div>
