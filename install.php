@@ -61,34 +61,62 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style type="text/css">
+    section.main {
+      height: calc(100vh - 325px);
+      display: flex;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
 
-  <div class="container">
-    <h2>Install this app in a shop to get access to its private admin data.</h2> 
-   
-    <p style="padding-bottom: 1em;">
-      <span class="hint">Don&rsquo;t have a shop to install your app in handy? <a href="https://app.shopify.com/services/partners/api_clients/test_shops">Create a test shop.</a></span>
-    </p> 
-
-    <div class="field">
-      <label for='shop' class="label"><strong>The URL of the Shop</strong> 
-        <span class="hint">(enter it exactly like this: myshop.myshopify.com)</span> 
-      </label>
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Aaron Soft
+        </h1>
+        <h2 class="subtitle">
+          Install this app in a shop to get access to its private admin data.
+        </h2>
+      </div>
     </div>
-    <form action="" method="post">
-      <input id="code" name="code" size="45" type="hidden" value="" />
-      <input id="shop" name="shop" size="45" type="text" value="" />
+  </section>
+  <section class="section main">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <div class="field">
+            <label for='shop' class="label"><strong>The URL of the Shop</strong> 
+              <span class="hint">(enter it exactly like this: myshop.myshopify.com)</span> 
+            </label>
+          </div>
+          <form action="" method="post">
+            <input id="code" name="code" size="45" type="hidden" value="" />
 
-      <div class="field is-grouped">
-        <p class="control is-expanded">
-          <input class="input" type="text" placeholder="Find a repository">
-        </p>
-        <p class="control">
-          <input name="commit" class="button is-info" type="submit" value="Install" />
+            <div class="field is-grouped">
+              <p class="control is-expanded">
+                <input id="shop" class="input" name="shop" size="45" type="text" value="" placeholder="myshop.myshopify.com" />
+              </p>
+              <p class="control">
+                <input name="commit" class="button is-info" type="submit" value="Install" />
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>Don&rsquo;t have a shop to install your app in handy?<a href="https://app.shopify.com/services/partners/api_clients/test_shops">Create a test shop.</a>
         </p>
       </div>
-    </form>
-  </div>
+    </div>
+  </footer>
 </body>
 </html>
