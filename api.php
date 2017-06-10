@@ -12,8 +12,10 @@ function createProduct($data) {
     $product = array('product' => json_decode($data) );
     var_dump($product);
     $response = $sc->call('POST', '/admin/products.json', $product);
+    
+    return $response;
+
   } catch (ShopifyApiException $e) {
     
   }
-  return $response;
 }
