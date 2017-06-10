@@ -182,7 +182,7 @@
           data: $("#form_pr").serialize(),
           success: function(data) {
             console.log('Succssfully Created!');
-            document.getElementById("json").innerHTML = JSON.stringify(data, undefined, 2);
+            document.getElementById("json").innerHTML = JSON.stringify(data, undefined, 4);
           },
           error: function() {
 
