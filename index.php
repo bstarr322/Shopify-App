@@ -151,7 +151,7 @@
                 <input name="product_type" class="input" type="text" placeholder="Text input">
               </p>
             </div>
-            <a class="button create-product">Primary</a>
+            <a class="button is-primary create-product">Primary</a>
           </form>
           
           <div class="field">

@@ -24,9 +24,7 @@ function createProduct() {
 
     $response = $sc->call('POST', '/admin/products.json', $product);
     
-    echo 'text';exit;
-    return $response;
-
+    echo json_encode($response);
   } catch (ShopifyApiException $e) {
     
   }
