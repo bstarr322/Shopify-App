@@ -6,11 +6,22 @@ session_start();
 
 $sc = new ShopifyClient($_SESSION['shop'], $_SESSION['token'], $api_key, $secret);
 
-function createProduct($data) {
+function createProduct() {
   try {
-    var_dump($data);
-    $product = array('product' => json_decode($data) );
-    var_dump($product);
+
+    $data = $_POST;
+    $product = array
+    (
+      "product" => array
+      (
+        "title"         => $data['title'],
+        "body_html"     => $data['body_html'],
+        "vendor"        => $data['vendor'],
+        "product_type"  => $data['product_type'],
+        "tags"          => "Barnes & Noble, John's Fav, \"Big Air\""
+      )
+    );
+
     $response = $sc->call('POST', '/admin/products.json', $product);
     
     return $response;

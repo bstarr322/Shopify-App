@@ -184,7 +184,7 @@
           url: '/api.php/createProduct',
           method: 'POST',
           dataType: "json",
-          data: JSON.stringify($("#form_pr").serializeArray()),
+          data: $("#form_pr").serialize(),
           success: function(data) {
             console.log('Succssfully Created!');
             $('.response code').html(data);
