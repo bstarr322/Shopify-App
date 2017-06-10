@@ -125,7 +125,7 @@
           <div class="field">
             <label class="label">Create a new product with the default product variant</label>
             <pre>
-            
+
               <b>POST /admin/products.json</b>
 
               {
@@ -158,7 +158,7 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <p>Don&rsquo;t have a shop to install your app in handy?<a href="https://app.shopify.com/services/partners/api_clients/test_shops">Create a test shop.</a>
+        <p>Don&rsquo;t have a shop to install your app in handy? <a href="https://app.shopify.com/services/partners/api_clients/test_shops"> Create a test shop.</a>
         </p>
       </div>
     </div>
