@@ -6,6 +6,9 @@
 
   $sc = new ShopifyClient($_SESSION['shop'], $_SESSION['token'], $api_key, $secret);
 
+  if (!$_SESSION) {
+    header("Location: install.php");
+  }
   // if(!$sc->validateSignature($_GET))
   //   die('Error: invalid signature.');
   
