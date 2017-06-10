@@ -183,7 +183,7 @@
     $(document).ready(function() {
       $('.create-product').on('click', function() {
         $.ajax({
-          url: '/api.php/createProduct'
+          url: '/api.php/createProduct',
           method: 'POST',
           dataType: "json",
           data: JSON.stringify($("#form_pr").serialize()),

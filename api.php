@@ -8,6 +8,7 @@ $sc = new ShopifyClient($_SESSION['shop'], $_SESSION['token'], $api_key, $secret
 
 function createProduct($product) {
   try {
+    var_dump($product);
     $response = $sc->call('POST', '/admin/products.json', $product);
   } catch (ShopifyApiException $e) {
     
