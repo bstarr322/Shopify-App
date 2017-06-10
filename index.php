@@ -32,6 +32,8 @@
 
     try {
       $response = $sc->call('POST', '/admin/products.json', $new_product);
+      print_r($response);
+      
     } catch (ShopifyApiException $e) {
       
     }
@@ -53,9 +55,9 @@
       $recurring_application_charge = $sc->call('POST', '/admin/recurring_application_charges.json', $charge);
 
       // API call limit helpers
-      echo $sc->callsMade(); // 2
-      echo $sc->callsLeft(); // 498
-      echo $sc->callLimit(); // 500
+      // echo $sc->callsMade(); // 2
+      // echo $sc->callsLeft(); // 498
+      // echo $sc->callLimit(); // 500
 
     }
     catch (ShopifyApiException $e)
