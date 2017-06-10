@@ -104,8 +104,6 @@
   <style type="text/css">
     section.main {
       min-height: calc(100vh - 325px);
-      display: flex;
-      align-items: center;
     }
   </style>
 </head>
