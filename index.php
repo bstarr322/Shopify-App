@@ -148,16 +148,14 @@
                 <input name="product_type" class="input" type="text" placeholder="Text input">
               </p>
             </div>
-            <a class="button is-primary create-product">Primary</a>
+            <a class="button is-primary create-product">Create Product</a>
           </form>
           
           <div class="field">
             <label for='shop' class="label">Product Response</label>
           </div>
           <figure class="response">
-            <pre>
-              <code>
-              </code>
+            <pre id="json">
             </pre>
           </figure>
         </div>
@@ -184,7 +182,7 @@
           data: $("#form_pr").serialize(),
           success: function(data) {
             console.log('Succssfully Created!');
-            $('.response code').html(data);
+            document.getElementById("json").innerHTML = JSON.stringify(data, undefined, 2);
           },
           error: function() {
 
